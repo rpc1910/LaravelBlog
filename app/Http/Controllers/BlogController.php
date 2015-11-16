@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
+use App\Post;
+
 class BlogController extends Controller {
 
     private $posts = array(
@@ -33,12 +35,12 @@ class BlogController extends Controller {
     );
     
     public function index() {
-        $posts = ['posts' => $this->posts];
+        $posts = ['posts' => Post::all()];
         return view('blog/index', $posts);
     }
 
     public function post($id) {
-        $posts = ['post' => $this->posts[$id]];
+        $posts = ['post' => Post::find($id)];
         return view('blog/post', $posts);
     }
 }

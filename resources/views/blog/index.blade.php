@@ -11,9 +11,9 @@
 
 	@foreach($posts as $post)
 		<article>
-			<h2>{{ $post['titulo'] }}</h2>
-			<p>{{ $post['conteudo'] }}</p>
-			<p><a href="/post/{{ $post['id'] }}">Leia mais</a></p>
+			<h2>{{ $post->titulo }}</h2>
+			<p>{{ $post->conteudo }}</p>
+			<p><a href="/post/{{ $post->id }}">Leia mais</a></p>
 			<hr>
 		</article>
 	@endforeach
